@@ -37,4 +37,4 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Attila" parent="." instance=ExtResource( 2 )]
-position = Vector2( 439, 184 )
+position = Vector2( 418.977, 113.254 )
