@@ -7,6 +7,10 @@ var speed = 50
 const GRAVITY = 20
 
 func _ready():
+	
+	if detectsCliffs:
+		set_modulate(Color(1.5,0.6,1,1))
+		
 	if direction == 1:
 		$AnimatedSprite.flip_h = true
 	

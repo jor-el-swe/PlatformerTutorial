@@ -180,6 +180,7 @@ position = Vector2( -267.357, 333.453 )
 
 [node name="enemy5" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( 35.3067, 233.746 )
+detectsCliffs = false
 
 [node name="Attila" parent="." instance=ExtResource( 2 )]
 position = Vector2( -776.011, 11.6832 )
