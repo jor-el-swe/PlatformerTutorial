@@ -34,9 +34,14 @@ func _on_topChecker_body_entered(body):
 	set_collision_layer_bit(4, false)
 	$sidesChecker.set_collision_mask_bit(0, false)
 	$sidesChecker.set_collision_layer_bit(4, false)
-	
+	$Timer.start()
 
 
 func _on_sidesChecker_body_entered(body):
-	print("hit player")
-	get_tree().change_scene("res://Level1.tscn")
+	if body.name == "Attila":
+		print("hit player")
+		get_tree().change_scene("res://Level1.tscn")
+
+
+func _on_Timer_timeout():
+	queue_free()

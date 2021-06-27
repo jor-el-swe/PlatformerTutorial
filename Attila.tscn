@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 26.9655
-height = 11.6945
+height = 12.195
 
 [node name="Attila" type="KinematicBody2D"]
 collision_mask = 16
@@ -17,5 +17,5 @@ animation = "idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.0129852, 14.9961 )
+position = Vector2( 0.127319, 14.9961 )
 shape = SubResource( 1 )
