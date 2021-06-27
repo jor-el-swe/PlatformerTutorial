@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Attila.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/HUD/coin_gold.png" type="Texture" id=7]
 [ext_resource path="res://Assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://HUD.gd" type="Script" id=9]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4535.81, 176.353 )
@@ -183,6 +184,17 @@ position = Vector2( 260.636, -232 )
 
 [node name="coin7" parent="coins" instance=ExtResource( 6 )]
 position = Vector2( 482.57, -377.801 )
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="enemy" parent="enemies" instance=ExtResource( 10 )]
+position = Vector2( -631.44, 341.147 )
+collision_layer = 16
+direction = 1
+
+[node name="enemy2" parent="enemies" instance=ExtResource( 10 )]
+position = Vector2( 137.73, 197.06 )
+collision_layer = 16
 
 [connection signal="body_entered" from="FallZone" to="Attila" method="_on_FallZone_body_entered"]
 [connection signal="coin_collected" from="coins/coin" to="HUD" method="_on_coin_collected"]
