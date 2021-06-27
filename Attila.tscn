@@ -17,5 +17,5 @@ animation = "idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.293602, 15.2767 )
+position = Vector2( -0.0129852, 14.9961 )
 shape = SubResource( 1 )

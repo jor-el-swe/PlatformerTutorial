@@ -193,9 +193,10 @@ direction = 1
 
 [node name="enemy4" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( -710.85, 467.005 )
+detectsCliffs = false
 
 [node name="enemy5" parent="enemies" instance=ExtResource( 10 )]
-position = Vector2( 35.3067, 236.266 )
+position = Vector2( 35.3067, 233.746 )
 
 [connection signal="body_entered" from="FallZone" to="Attila" method="_on_FallZone_body_entered"]
 [connection signal="coin_collected" from="coins/coin" to="HUD" method="_on_coin_collected"]
