@@ -32,15 +32,17 @@ func _on_topChecker_body_entered(body):
 	speed = 0
 	set_collision_mask_bit(0, false)
 	set_collision_layer_bit(4, false)
+	$topChecker.set_collision_mask_bit(0, false)
+	$topChecker.set_collision_layer_bit(4, false)
 	$sidesChecker.set_collision_mask_bit(0, false)
 	$sidesChecker.set_collision_layer_bit(4, false)
 	$Timer.start()
-
+	body.bounce()
 
 func _on_sidesChecker_body_entered(body):
 	if body.name == "Attila":
 		print("hit player")
-		get_tree().change_scene("res://Level1.tscn")
+		body.ouch(position.x)
 
 
 func _on_Timer_timeout():

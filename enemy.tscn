@@ -25,7 +25,7 @@ extents = Vector2( 12.2829, 24.9502 )
 extents = Vector2( 20.0577, 3.32809 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 28.196, 8.57979 )
+extents = Vector2( 29.2902, 8.57979 )
 
 [node name="enemy" type="KinematicBody2D"]
 collision_layer = 16
@@ -61,7 +61,7 @@ collision_layer = 0
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sidesChecker"]
-position = Vector2( 0.353561, 8.5749 )
+position = Vector2( 0.799011, 6.7931 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]

@@ -174,7 +174,6 @@ position = Vector2( 482.57, -377.801 )
 [node name="enemy" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( -623.88, 71.524 )
 direction = 1
-detectsCliffs = false
 
 [node name="enemy4" parent="enemies" instance=ExtResource( 10 )]
 position = Vector2( -267.357, 333.453 )
