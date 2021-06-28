@@ -42,7 +42,7 @@ __meta__ = {
 margin_left = 3.17847
 margin_right = 1027.18
 margin_bottom = 600.0
-color = Color( 0.317647, 0.0862745, 0.568627, 1 )
+color = Color( 0.0901961, 0.0862745, 0.568627, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
