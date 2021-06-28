@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/fonts/KiriFont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://mainMenu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_color = Color( 0.745098, 0.803922, 0.0235294, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1069.0
+margin_bottom = 642.0
+color = Color( 0.337255, 0.0627451, 0.101961, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 302.99
+margin_top = 66.9966
+margin_right = 807.99
+margin_bottom = 276.997
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.678431, 0.819608, 0.0901961, 1 )
+text = "game over!!!"
+align = 1
+valign = 1
+
+[node name="mainMenu" type="Button" parent="."]
+margin_left = 440.502
+margin_top = 367.085
+margin_right = 692.502
+margin_bottom = 420.085
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0784314, 0.423529, 0.027451, 1 )
+custom_colors/font_color_hover = Color( 0.176471, 0.321569, 0.662745, 1 )
+text = "main menu"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="mainMenu" to="mainMenu" method="_on_mainMenu_pressed"]

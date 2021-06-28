@@ -8,7 +8,7 @@ func _ready():
 	
 func _physics_process(delta):
 	if coins == NO_COINS_TO_WIN:
-		get_tree().change_scene("res://Level1.tscn")
+		get_tree().change_scene("res://WinScreen.tscn")
 
 
 func _on_coin_collected():
