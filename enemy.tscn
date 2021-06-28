@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/enemies/slimeBlue_blue.png" type="Texture" id=1]
 [ext_resource path="res://Assets/enemies/slimeBlue.png" type="Texture" id=2]
 [ext_resource path="res://Assets/enemies/slimeBlue_squashed.png" type="Texture" id=3]
 [ext_resource path="res://enemy.gd" type="Script" id=4]
+[ext_resource path="res://Assets/sounds/pepSound2.ogg" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -38,6 +39,7 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "crawl"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -76,6 +78,10 @@ shape = SubResource( 5 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
+
+[node name="soundSquash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 10.331
 
 [connection signal="body_entered" from="topChecker" to="." method="_on_topChecker_body_entered"]
 [connection signal="body_entered" from="sidesChecker" to="." method="_on_sidesChecker_body_entered"]

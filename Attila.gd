@@ -29,7 +29,9 @@ func _physics_process(delta):
 	if !is_on_floor():
 		$Sprite.play("air")
 	
+
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$soundJump.play()
 		velocity.y = JUMP_SPEED
 		
 	if Input.is_action_pressed("jump") and velocity.y < 0:
@@ -38,6 +40,7 @@ func _physics_process(delta):
 		totalGravity -= REDUCED_GRAVITY*1.5
 		
 	if velocity.y > 1 and velocity.y < 500:
+		
 		velocity.y += 500
 		
 	velocity = move_and_slide(velocity, Vector2.UP)

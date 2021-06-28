@@ -33,6 +33,7 @@ func _physics_process(delta):
 
 func _on_topChecker_body_entered(body):
 	$AnimatedSprite.play("squashed")
+	$soundSquash.play()
 	speed = 0
 	disableCollisions()
 	$Timer.start()
