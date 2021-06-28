@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/enemies/slimeBlue_blue.png" type="Texture" id=1]
 [ext_resource path="res://Assets/enemies/slimeBlue.png" type="Texture" id=2]
@@ -27,6 +27,9 @@ extents = Vector2( 20.0577, 3.32809 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 29.2902, 8.57979 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 27.3051, 6.46391 )
+
 [node name="enemy" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 35
@@ -35,6 +38,7 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "crawl"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -56,12 +60,19 @@ position = Vector2( 0.353561, -11.3431 )
 shape = SubResource( 3 )
 
 [node name="sidesChecker" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 16
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sidesChecker"]
 position = Vector2( 0.799011, 6.7931 )
 shape = SubResource( 4 )
+
+[node name="bottomChecker" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomChecker"]
+position = Vector2( 1.11362, 11.8044 )
+shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
@@ -69,4 +80,5 @@ one_shot = true
 
 [connection signal="body_entered" from="topChecker" to="." method="_on_topChecker_body_entered"]
 [connection signal="body_entered" from="sidesChecker" to="." method="_on_sidesChecker_body_entered"]
+[connection signal="body_entered" from="bottomChecker" to="." method="_on_bottomChecker_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

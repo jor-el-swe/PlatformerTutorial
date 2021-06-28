@@ -53,6 +53,7 @@ func bounce():
 	velocity.y = -500
 
 func ouch(var xPosition):
+	set_collision_mask_bit(4, false)
 	velocity.y = -500
 	print("ouch")
 	if position.x < xPosition:

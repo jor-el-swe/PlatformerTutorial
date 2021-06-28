@@ -34,20 +34,34 @@ func _physics_process(delta):
 func _on_topChecker_body_entered(body):
 	$AnimatedSprite.play("squashed")
 	speed = 0
+	disableCollisions()
+	$Timer.start()
+	body.bounce()
+
+func _on_sidesChecker_body_entered(body):
+	if body.name == "Attila":
+		print("hit player side")
+		disableCollisions()
+		body.ouch(position.x)
+
+func _on_bottomChecker_body_entered(body):
+	if body.name == "Attila":
+		print("hit player bottom")
+		disableCollisions()
+		body.ouch(position.x)
+
+func disableCollisions():
 	set_collision_mask_bit(0, false)
 	set_collision_layer_bit(4, false)
 	$topChecker.set_collision_mask_bit(0, false)
 	$topChecker.set_collision_layer_bit(4, false)
 	$sidesChecker.set_collision_mask_bit(0, false)
 	$sidesChecker.set_collision_layer_bit(4, false)
-	$Timer.start()
-	body.bounce()
-
-func _on_sidesChecker_body_entered(body):
-	if body.name == "Attila":
-		print("hit player")
-		body.ouch(position.x)
-
+	$bottomChecker.set_collision_mask_bit(0, false)
+	$bottomChecker.set_collision_layer_bit(4, false)
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+
